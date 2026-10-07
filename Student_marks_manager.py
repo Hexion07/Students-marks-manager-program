@@ -59,20 +59,28 @@ while True:
          if not student:
                   print("No student found in db!")
          else:
-             with open("/storage/emulated/0/My_Python /Project/student.txt","w") as file:  # replace as file path here:   open("_here_","w")
+              # replace as file path here:   open("_here_","w") 
+             with open("/storage/emulated/0/main/SMMP/student.txt","w") as file:  
                  if not file:
                     print('File Error')
                
                  else:  
-                    file.write("------Student's Data-----")
+                    file.write("-----Student's Data-----")
+                    print("\n ...All Data printed Successfully!" )
                     for name,marks in student.items():
-                        writer = file.write
-                        writer.writerow([name,marks])
-                        file.close()  
-                        print("\n ...All Data printed Successfully!" )
+                        writer = str(student)
+                        try: 
+                            file.write(f"\n{name}: {marks}\n")
+                            # file.write(writer)
+                            
+                            
+                        except:
+                            file.close()  
+                            print("\n File Error!" )
          
     elif choice == "5":
-        file = open("/storage/emulated/0/My_Python /Project/student.txt","w")   # replace as file path here:   open("_here_","w")
+        file = open("/storage/emulated/0/main/SMMP/student.txt","w")   
+        # replace as file path here:   open("_here_","w")
         pass    
         print("All Data formatted successfully!")
               
